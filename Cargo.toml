@@ -1,0 +1,15 @@
+[package]
+name = "usdt-reader"
+version = "0.1.0"
+edition = "2021"
+readme = "README.md"
+categories = ["parsing", "development-tools::debugging"]
+keywords = ["binary", "elf", "systemtap", "ebpf", "dtrace"]
+license = "MIT OR Apache-2.0"
+authors = ["Nikita Baksalyar <nikita.baksalyar@gmail.com>"]
+
+[dependencies]
+goblin = "0.5.1"
+
+[dev-dependencies]
+probe = "0.3"
