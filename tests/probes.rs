@@ -1,4 +1,4 @@
-use std::env;
+use std::{env, fs};
 
 use probe::probe;
 use usdt_reader::*;
@@ -7,5 +7,9 @@ use usdt_reader::*;
 fn basic_probe() {
     probe!(usdtreader, test_probe);
 
-    let ctx = Context::new_from_bin(&env::current_exe().unwrap()).unwrap();
+    let object_file = fs::read(env::current_exe().unwrap()).unwrap();
+    let ctx = Context::new(&object_file).unwrap();
+
+    let probes = ctx.probes().unwrap().collect::<Vec<_>>();
+    dbg!(probes);
 }
