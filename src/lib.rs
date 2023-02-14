@@ -103,8 +103,8 @@ impl<'a> Context<'a> {
         let _ = arg_format.pop();
 
         let p = Probe {
-            probe_name: String::from_utf8(provider_name)?,
-            provider_name: String::from_utf8(probe_name)?,
+            probe_name: String::from_utf8(probe_name)?,
+            provider_name: String::from_utf8(provider_name)?,
             args_str: String::from_utf8(arg_format)?,
             probe_addr: pc_addr,
             sh_addr,
